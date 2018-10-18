@@ -8,11 +8,11 @@ This package enables the Markdown / MkDocs backend of [`Documenter.jl`][document
 
 ## Installation
 
-The package is currently unregistered and must be added via URL in the package manager.
-From the Julia REPL, type `]` to enter the Pkg REPL mode and run
+The package can be added using the Julia package manager. From the Julia REPL, type `]` to
+enter the Pkg REPL mode and run
 
 ```
-pkg> add https://github.com/JuliaDocs/DocumenterMarkdown.jl.git
+pkg> add DocumenterMarkdown
 ```
 
 ## Usage
