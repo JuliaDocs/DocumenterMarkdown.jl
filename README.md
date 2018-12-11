@@ -17,13 +17,13 @@ pkg> add DocumenterMarkdown
 
 ## Usage
 
-To enable the backend import the package in `make.jl` and then just pass `format = :markdown`
+To enable the backend import the package in `make.jl` and then just pass `format = Markdown()`
 to `makedocs`:
 
 ```julia
 using Documenter
 using DocumenterMarkdown
-makedocs(format = :markdown, ...)
+makedocs(format = Markdown(), ...)
 ```
 
 [documenter]: https://github.com/JuliaDocs/Documenter.jl
