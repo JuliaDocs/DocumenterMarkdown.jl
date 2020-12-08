@@ -2,7 +2,7 @@
 
 ## Version `v0.2.1`
 
-* ![Maintenance][badge-maintenance] Maintenance release declaring compatibility with Documenter 0.26. ([#5][github-5])
+* Declare compatibility with Documenter 0.26. ([#5][github-5])
 
 ## Version `v0.2.0`
 
@@ -30,7 +30,6 @@
 [badge-feature]: https://img.shields.io/badge/feature-green.svg
 [badge-enhancement]: https://img.shields.io/badge/enhancement-blue.svg
 [badge-bugfix]: https://img.shields.io/badge/bugfix-purple.svg
-[badge-maintenance]: https://img.shields.io/badge/maintenance-gray.svg
 
 <!--
 # Badges
@@ -40,5 +39,4 @@
 ![Feature][badge-feature]
 ![Enhancement][badge-enhancement]
 ![Bugfix][badge-bugfix]
-![Maintenance][badge-maintenance]
 -->
