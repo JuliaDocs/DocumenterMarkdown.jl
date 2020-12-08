@@ -10,12 +10,6 @@
   which should be passed to Documenter's `makedocs` as `makedocs(format = Markdown(), ...)`
   for specifying Markdown output ([#3][github-3]).
 
-## Version `v0.2.0`
-
-* ![Enhancement][badge-enhancement] Now defines and exports the `Markdown` type
-  which should be passed to Documenter's `makedocs` as `makedocs(format = Markdown(), ...)`
-  for specifying Markdown output ([#3][github-3]).
-
 ## Version `v0.1.0`
 
 * Initial release.
