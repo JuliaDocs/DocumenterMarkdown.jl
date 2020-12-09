@@ -1,5 +1,9 @@
 # DocumenterMarkdown.jl changelog
 
+## Version `v0.2.1`
+
+* Declare compatibility with Documenter 0.26. ([#5][github-5])
+
 ## Version `v0.2.0`
 
 * ![Enhancement][badge-enhancement] Now defines and exports the `Markdown` type
@@ -12,6 +16,7 @@
 
 
 [github-3]: https://github.com/JuliaDocs/DocumenterMarkdown.jl/pull/3
+[github-5]: https://github.com/JuliaDocs/DocumenterMarkdown.jl/pull/5
 
 
 [badge-breaking]: https://img.shields.io/badge/BREAKING-red.svg
