@@ -1,13 +1,13 @@
 name = "DocumenterMarkdown"
 uuid = "997ab1e6-3595-5248-9280-8efb232c3433"
-version = "0.2.1"
+version = "0.2.2"
 
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 
 [compat]
 julia = "0.7, 1"
-Documenter = "0.20, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26"
+Documenter = "0.20, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
