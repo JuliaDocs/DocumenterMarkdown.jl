@@ -10,4 +10,5 @@ deploydocs(
     deps   = Deps.pip("mkdocs", "pygments", "python-markdown-math"),
     make   = () -> run(`mkdocs build`),
     target = "site",
+    push_preview = true,
 )
