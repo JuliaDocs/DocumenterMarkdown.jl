@@ -1,4 +1,5 @@
-using Documenter, DocumenterMarkdown
+using Documenter: makedocs, deploydocs, Deps
+using DocumenterMarkdown
 
 makedocs(
     sitename = "DocumenterMarkdown",
