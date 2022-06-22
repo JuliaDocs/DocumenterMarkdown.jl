@@ -1,10 +1,3 @@
-"""
-A module for rendering `Document` objects to markdown.
-"""
-module MarkdownWriter
-
-using ..DocumenterMarkdown: ASSETS
-
 import Documenter:
     Anchors,
     Builder,
@@ -28,7 +21,7 @@ end
 mdext(f) = string(splitext(f)[1], ".md")
 
 function render(doc::Documents.Document, settings::Markdown=Markdown())
-    @info "MarkdownWriter: rendering Markdown pages."
+    @info "DocumenterMarkdown: rendering Markdown pages."
     copy_assets(doc)
     mime = MIME"text/plain"()
     for (src, page) in doc.blueprint.pages
@@ -50,7 +43,7 @@ function copy_assets(doc::Documents.Document)
         for each in readdir(assets)
             src = joinpath(assets, each)
             dst = joinpath(builddir, each)
-            ispath(dst) && @warn "Documenter: overwriting '$dst'."
+            ispath(dst) && @warn "DocumenterMarkdown: overwriting '$dst'."
             cp(src, dst; force = true)
         end
     else
@@ -99,7 +92,7 @@ function renderdoc(io::IO, mime::MIME"text/plain", md::MarkdownStdlib.MD, page, 
         for (markdown, result) in zip(md.content, md.meta[:results])
             render(io, mime, dropheaders(markdown), page, doc)
             # When a source link is available then print the link.
-            url = Utilities.url(doc.user.remote, result)
+            url = Utilities.url(doc.internal.remote, doc.user.repo, result)
             if url !== nothing
                 link = "<a target='_blank' href='$url' class='documenter-source'>source</a><br>"
                 println(io, "\n", link, "\n")
@@ -232,5 +225,3 @@ end
 dropheaders(h::MarkdownStdlib.Header) = MarkdownStdlib.Paragraph([MarkdownStdlib.Bold(h.text)])
 dropheaders(v::Vector) = map(dropheaders, v)
 dropheaders(other) = other
-
-end
