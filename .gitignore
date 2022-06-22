@@ -1,3 +1,6 @@
 Manifest.toml
 /test/example/build/
 /test/formats/builds/
+
+/docs/build/
+/docs/site/
