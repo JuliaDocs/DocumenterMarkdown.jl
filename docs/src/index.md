@@ -1,10 +1,13 @@
 # DocumenterMarkdown
 
+DocumenterMarkdown is an extension of the [Documenter](https://github.com/JuliaDocs/Documenter.jl)
+Julia package, implementing the Markdown -> Markdown "writer" for building documentation sites.
+The Markdown output can then be further processed with other tools, such as [MkDocs](https://www.mkdocs.org/).
+
 ## Markdown & MkDocs
 
-Markdown output requires the [`DocumenterMarkdown`](https://github.com/JuliaDocs/DocumenterMarkdown.jl)
-package to be available and loaded.
-For Travis setups, add the package to the `docs/Project.toml` environment as a dependency.
+To have the Markdown output available, you need to add the DocumenterMarkdown package to the
+documentation Julia environment (e.g. `docs/Project.toml`) as a dependency.
 You also need to import the package in `make.jl`:
 
 ```
