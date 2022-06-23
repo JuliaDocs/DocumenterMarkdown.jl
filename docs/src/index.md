@@ -4,6 +4,9 @@ DocumenterMarkdown is an extension of the [Documenter](https://github.com/JuliaD
 Julia package, implementing the Markdown -> Markdown "writer" for building documentation sites.
 The Markdown output can then be further processed with other tools, such as [MkDocs](https://www.mkdocs.org/).
 
+This functionality used to be a part of the core Documenter, but now functions as an example on
+how to implement alternative writers.
+
 ## Markdown & MkDocs
 
 To have the Markdown output available, you need to add the DocumenterMarkdown package to the
