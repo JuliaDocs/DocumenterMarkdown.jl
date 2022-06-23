@@ -3,6 +3,7 @@ using DocumenterMarkdown
 
 makedocs(
     sitename = "DocumenterMarkdown",
+    format = Markdown(),
 )
 
 deploydocs(
