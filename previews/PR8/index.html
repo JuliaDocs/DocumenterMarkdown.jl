@@ -85,10 +85,12 @@
                 <p><a id='DocumenterMarkdown'></a></p>
 <p><a id='DocumenterMarkdown-1'></a></p>
 <h1 id="documentermarkdown">DocumenterMarkdown</h1>
+<p>DocumenterMarkdown is an extension of the <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter</a> Julia package, implementing the Markdown -&gt; Markdown "writer" for building documentation sites. The Markdown output can then be further processed with other tools, such as <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+<p>This functionality used to be a part of the core Documenter, but now functions as an example on how to implement alternative writers.</p>
 <p><a id='Markdown-and-MkDocs'></a></p>
 <p><a id='Markdown-and-MkDocs-1'></a></p>
 <h2 id="markdown-mkdocs">Markdown &amp; MkDocs</h2>
-<p>Markdown output requires the <a href="https://github.com/JuliaDocs/DocumenterMarkdown.jl"><code>DocumenterMarkdown</code></a> package to be available and loaded. For Travis setups, add the package to the <code>docs/Project.toml</code> environment as a dependency. You also need to import the package in <code>make.jl</code>:</p>
+<p>To have the Markdown output available, you need to add the DocumenterMarkdown package to the documentation Julia environment (e.g. <code>docs/Project.toml</code>) as a dependency. You also need to import the package in <code>make.jl</code>:</p>
 <pre><code>using DocumenterMarkdown
 </code></pre>
 <p>When <code>DocumenterMarkdown</code> is loaded, you can specify <code>format = Markdown()</code> in <a href="@ref"><code>makedocs</code></a>. Documenter will then output a set of Markdown files to the <code>build</code> directory that can then further be processed with <a href="https://www.mkdocs.org/">MkDocs</a> into HTML pages.</p>
@@ -222,5 +224,5 @@ extra_javascript:
 
 <!--
 MkDocs version : 1.3.0
-Build Date UTC : 2022-06-23 00:03:28.318071+00:00
+Build Date UTC : 2022-06-23 00:26:08.824271+00:00
 -->
