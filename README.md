@@ -1,10 +1,22 @@
 # DocumenterMarkdown
 
-| **Build Status**                                                                                |
-|:-----------------------------------------------------------------------------------------------:|
-| [![][travis-img]][travis-url] [![][appveyor-img]][appveyor-url] [![][codecov-img]][codecov-url] |
+| **Build Status**                                        |
+|:-------------------------------------------------------:|
+| [![][gha-img]][gha-url] [![][codecov-img]][codecov-url] |
 
-This package enables the Markdown / MkDocs backend of [`Documenter.jl`][documenter].
+This package provides a Markdown / MkDocs backend to [`Documenter.jl`][documenter].
+
+**Package status:** Currently, the package does not work with the 0.28 branch of Documenter, and
+therefore the latest versions of Documenter do not have a Markdown backend available.
+Older, released versions of this package can still be used together with older versions of Documenter (0.27
+and earlier) to enable the Markdown backend built in to those versions of Documenter.
+
+Right now, this package is not actively maintained. However, contributions are welcome by anyone
+who might be interested in using and developing this backend.
+
+## Documentation
+
+- [**DEVEL**][docs-dev-url] &mdash; *documentation of the in-development version.*
 
 ## Installation
 
@@ -32,11 +44,11 @@ makedocs(format = Markdown(), ...)
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
 [docs-stable-url]: https://juliadocs.github.io/DocumenterMarkdown.jl/stable
 
-[travis-img]: https://travis-ci.org/JuliaDocs/DocumenterMarkdown.jl.svg?branch=master
-[travis-url]: https://travis-ci.org/JuliaDocs/DocumenterMarkdown.jl
+[docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
+[docs-dev-url]: https://juliadocs.github.io/DocumenterMarkdown.jl/dev
 
-[appveyor-img]: https://ci.appveyor.com/api/projects/status/mi763gn92pb6rxly?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/JuliaDocs/documentermarkdown-jl
+[gha-img]: https://github.com/JuliaDocs/DocumenterMarkdown.jl/actions/workflows/CI.yml/badge.svg?branch=master
+[gha-url]: https://github.com/JuliaDocs/DocumenterMarkdown.jl/actions/workflows/CI.yml
 
 [codecov-img]: https://codecov.io/gh/JuliaDocs/DocumenterMarkdown.jl/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/JuliaDocs/DocumenterMarkdown.jl
