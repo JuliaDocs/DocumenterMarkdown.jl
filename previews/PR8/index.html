@@ -1,5 +1,105 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>DocumenterMarkdown · DocumenterMarkdown</title><script data-outdated-warner src="assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.044/juliamono.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href>DocumenterMarkdown</a></span></div><form class="docs-search" action="search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li class="is-active"><a class="tocitem" href>DocumenterMarkdown</a><ul class="internal"><li><a class="tocitem" href="#Markdown-and-MkDocs"><span>Markdown &amp; MkDocs</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>DocumenterMarkdown</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>DocumenterMarkdown</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/JuliaDocs/DocumenterMarkdown.jl/blob/master/docs/src/index.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="DocumenterMarkdown"><a class="docs-heading-anchor" href="#DocumenterMarkdown">DocumenterMarkdown</a><a id="DocumenterMarkdown-1"></a><a class="docs-heading-anchor-permalink" href="#DocumenterMarkdown" title="Permalink"></a></h1><h2 id="Markdown-and-MkDocs"><a class="docs-heading-anchor" href="#Markdown-and-MkDocs">Markdown &amp; MkDocs</a><a id="Markdown-and-MkDocs-1"></a><a class="docs-heading-anchor-permalink" href="#Markdown-and-MkDocs" title="Permalink"></a></h2><p>Markdown output requires the <a href="https://github.com/JuliaDocs/DocumenterMarkdown.jl"><code>DocumenterMarkdown</code></a> package to be available and loaded. For Travis setups, add the package to the <code>docs/Project.toml</code> environment as a dependency. You also need to import the package in <code>make.jl</code>:</p><pre><code class="nohighlight hljs">using DocumenterMarkdown</code></pre><p>When <code>DocumenterMarkdown</code> is loaded, you can specify <code>format = Markdown()</code> in <a href="@ref"><code>makedocs</code></a>. Documenter will then output a set of Markdown files to the <code>build</code> directory that can then further be processed with <a href="https://www.mkdocs.org/">MkDocs</a> into HTML pages.</p><p>MkDocs, of course, is not the only option you have – any markdown to HTML converter should work fine with some amount of setting up.</p><div class="admonition is-info"><header class="admonition-header">Note</header><div class="admonition-body"><p>Markdown output used to be the default option (i.e. when leaving the <code>format</code> option unspecified). The default now is the HTML output.</p></div></div><h3 id="The-MkDocs-mkdocs.yml-file"><a class="docs-heading-anchor" href="#The-MkDocs-mkdocs.yml-file">The MkDocs <code>mkdocs.yml</code> file</a><a id="The-MkDocs-mkdocs.yml-file-1"></a><a class="docs-heading-anchor-permalink" href="#The-MkDocs-mkdocs.yml-file" title="Permalink"></a></h3><p>A MkDocs build is controlled by the <code>mkdocs.yml</code> configuration file. Add the file with the following content to the <code>docs/</code> directory:</p><pre><code class="language-yaml hljs">site_name:        PACKAGE_NAME.jl
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Description..." /><meta name="author" content="USER_NAME" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>PACKAGE_NAME.jl</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="assets/Documenter.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> PACKAGE_NAME.jl
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#markdown-mkdocs">Markdown &amp; MkDocs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-mkdocs-mkdocsyml-file">The MkDocs mkdocs.yml file</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deployment-with-mkdocs">Deployment with MkDocs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#latex-mkdocs-and-mathjax">$\LaTeX$: MkDocs and MathJax</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">PACKAGE_NAME.jl</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/USER_NAME/PACKAGE_NAME.jl/edit/master/docs/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a id='DocumenterMarkdown'></a></p>
+<p><a id='DocumenterMarkdown-1'></a></p>
+<h1 id="documentermarkdown">DocumenterMarkdown</h1>
+<p><a id='Markdown-and-MkDocs'></a></p>
+<p><a id='Markdown-and-MkDocs-1'></a></p>
+<h2 id="markdown-mkdocs">Markdown &amp; MkDocs</h2>
+<p>Markdown output requires the <a href="https://github.com/JuliaDocs/DocumenterMarkdown.jl"><code>DocumenterMarkdown</code></a> package to be available and loaded. For Travis setups, add the package to the <code>docs/Project.toml</code> environment as a dependency. You also need to import the package in <code>make.jl</code>:</p>
+<pre><code>using DocumenterMarkdown
+</code></pre>
+<p>When <code>DocumenterMarkdown</code> is loaded, you can specify <code>format = Markdown()</code> in <a href="@ref"><code>makedocs</code></a>. Documenter will then output a set of Markdown files to the <code>build</code> directory that can then further be processed with <a href="https://www.mkdocs.org/">MkDocs</a> into HTML pages.</p>
+<p>MkDocs, of course, is not the only option you have – any markdown to HTML converter should work fine with some amount of setting up.</p>
+<p>!!! note
+    Markdown output used to be the default option (i.e. when leaving the <code>format</code> option unspecified). The default now is the HTML output.</p>
+<p><a id='The-MkDocs-mkdocs.yml-file'></a></p>
+<p><a id='The-MkDocs-mkdocs.yml-file-1'></a></p>
+<h3 id="the-mkdocs-mkdocsyml-file">The MkDocs <code>mkdocs.yml</code> file</h3>
+<p>A MkDocs build is controlled by the <code>mkdocs.yml</code> configuration file. Add the file with the following content to the <code>docs/</code> directory:</p>
+<pre><code class="language-yaml">site_name:        PACKAGE_NAME.jl
 repo_url:         https://github.com/USER_NAME/PACKAGE_NAME.jl
 site_description: Description...
 site_author:      USER_NAME
@@ -19,21 +119,50 @@ markdown_extensions:
   - fenced_code
   - mdx_math
 
-docs_dir: &#39;build&#39;
+docs_dir: 'build'
 
 pages:
-  - Home: index.md</code></pre><p>If you have run Documenter and it has generated a <code>build/</code> directory, you can now try running <code>mkdocs build</code> – this should now generate the <code>site/</code> directory. You should also add the <code>docs/site/</code> directory into your <code>.gitignore</code> file, which should now look like:</p><pre><code class="nohighlight hljs">docs/build/
-docs/site/</code></pre><p>This is only a basic skeleton. Read through the MkDocs documentation if you would like to know more about the available settings.</p><h3 id="Deployment-with-MkDocs"><a class="docs-heading-anchor" href="#Deployment-with-MkDocs">Deployment with MkDocs</a><a id="Deployment-with-MkDocs-1"></a><a class="docs-heading-anchor-permalink" href="#Deployment-with-MkDocs" title="Permalink"></a></h3><p>To deploy MkDocs on Travis, you also need to provide additional keyword arguments to <a href="@ref"><code>deploydocs</code></a>. Your <a href="@ref"><code>deploydocs</code></a> call should look something like</p><pre><code class="language-julia hljs">deploydocs(
+  - Home: index.md
+</code></pre>
+<p>If you have run Documenter and it has generated a <code>build/</code> directory, you can now try running <code>mkdocs build</code> – this should now generate the <code>site/</code> directory. You should also add the <code>docs/site/</code> directory into your <code>.gitignore</code> file, which should now look like:</p>
+<pre><code>docs/build/
+docs/site/
+</code></pre>
+<p>This is only a basic skeleton. Read through the MkDocs documentation if you would like to know more about the available settings.</p>
+<p><a id='Deployment-with-MkDocs'></a></p>
+<p><a id='Deployment-with-MkDocs-1'></a></p>
+<h3 id="deployment-with-mkdocs">Deployment with MkDocs</h3>
+<p>To deploy MkDocs on Travis, you also need to provide additional keyword arguments to <a href="@ref"><code>deploydocs</code></a>. Your <a href="@ref"><code>deploydocs</code></a> call should look something like</p>
+<pre><code class="language-julia">deploydocs(
     repo   = &quot;github.com/USER_NAME/PACKAGE_NAME.jl.git&quot;,
     deps   = Deps.pip(&quot;mkdocs&quot;, &quot;pygments&quot;, &quot;python-markdown-math&quot;),
     make   = () -&gt; run(`mkdocs build`)
     target = &quot;site&quot;
-)</code></pre><ul><li><code>deps</code> serves to provide the required Python dependencies to build the documentation</li><li><code>make</code> specifies the function that calls <code>mkdocs</code> to perform the second build step</li><li><code>target</code>, which specified which files get copied to <code>gh-pages</code>, needs to point to the <code>site/</code> directory</li></ul><p>In the example above we include the dependencies <a href="https://www.mkdocs.org">mkdocs</a> and <a href="https://github.com/mitya57/python-markdown-math"><code>python-markdown-math</code></a>. The former makes sure that MkDocs is installed to deploy the documentation, and the latter provides the <code>mdx_math</code> markdown extension to exploit MathJax rendering of latex equations in markdown. Other dependencies should be included here.</p><h3 id="\\LaTeX:-MkDocs-and-MathJax"><a class="docs-heading-anchor" href="#\\LaTeX:-MkDocs-and-MathJax"><span>$\LaTeX$</span>: MkDocs and MathJax</a><a id="\\LaTeX:-MkDocs-and-MathJax-1"></a><a class="docs-heading-anchor-permalink" href="#\\LaTeX:-MkDocs-and-MathJax" title="Permalink"></a></h3><p>To get MkDocs to display <span>$\LaTeX$</span> equations correctly we need to update several of this configuration files described in the <a href="@ref">Package Guide</a>.</p><p><code>docs/make.jl</code> should add the <code>python-markdown-math</code> dependency to allow for equations to be rendered correctly.</p><pre><code class="language-julia hljs"># ...
+)
+</code></pre>
+<ul>
+<li><code>deps</code> serves to provide the required Python dependencies to build the documentation</li>
+<li><code>make</code> specifies the function that calls <code>mkdocs</code> to perform the second build step</li>
+<li><code>target</code>, which specified which files get copied to <code>gh-pages</code>, needs to point to the <code>site/</code> directory</li>
+</ul>
+<p>In the example above we include the dependencies <a href="https://www.mkdocs.org">mkdocs</a> and <a href="https://github.com/mitya57/python-markdown-math"><code>python-markdown-math</code></a>. The former makes sure that MkDocs is installed to deploy the documentation, and the latter provides the <code>mdx_math</code> markdown extension to exploit MathJax rendering of latex equations in markdown. Other dependencies should be included here.</p>
+<p><a id='\LaTeX:-MkDocs-and-MathJax'></a></p>
+<p><a id='\LaTeX:-MkDocs-and-MathJax-1'></a></p>
+<h3 id="latex-mkdocs-and-mathjax">$\LaTeX$: MkDocs and MathJax</h3>
+<p>To get MkDocs to display $\LaTeX$ equations correctly we need to update several of this configuration files described in the <a href="@ref">Package Guide</a>.</p>
+<p><code>docs/make.jl</code> should add the <code>python-markdown-math</code> dependency to allow for equations to be rendered correctly.</p>
+<pre><code class="language-julia"># ...
 
 deploydocs(
     deps = Deps.pip(&quot;pygments&quot;, &quot;mkdocs&quot;, &quot;python-markdown-math&quot;),
     # ...
-)</code></pre><p>This package should also be installed locally so that you can preview the generated documentation prior to pushing new commits to a repository.</p><pre><code class="language-sh hljs">$ pip install python-markdown-math</code></pre><p>The <code>docs/mkdocs.yml</code> file must add the <code>python-markdown-math</code> extension, called <code>mdx_math</code>, as well as two MathJax JavaScript files:</p><pre><code class="language-yaml hljs"># ...
+)
+</code></pre>
+<p>This package should also be installed locally so that you can preview the generated documentation prior to pushing new commits to a repository.</p>
+<pre><code class="language-sh">$ pip install python-markdown-math
+</code></pre>
+<p>The <code>docs/mkdocs.yml</code> file must add the <code>python-markdown-math</code> extension, called <code>mdx_math</code>, as well as two MathJax JavaScript files:</p>
+<pre><code class="language-yaml"># ...
 markdown_extensions:
   - mdx_math
   # ...
@@ -41,4 +170,57 @@ markdown_extensions:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML
   - assets/mathjaxhelper.js
-# ...</code></pre><p><strong>Final Remarks</strong></p><p>Following this guide and adding the necessary changes to the configuration files should enable properly rendered mathematical equations within your documentation both locally and when built and deployed using the Travis built service.</p></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.19 on <span class="colophon-date" title="Wednesday 22 June 2022 03:20">Wednesday 22 June 2022</span>. Using Julia version 1.6.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+# ...
+</code></pre>
+<p><strong>Final Remarks</strong></p>
+<p>Following this guide and adding the necessary changes to the configuration files should enable properly rendered mathematical equations within your documentation both locally and when built and deployed using the Travis built service.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/USER_NAME/PACKAGE_NAME.jl" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" defer></script>
+      <script src="assets/mathjaxhelper.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.3.0
+Build Date UTC : 2022-06-23 00:03:28.318071+00:00
+-->
