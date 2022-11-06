@@ -39,13 +39,13 @@ makedocs(format = Markdown(), ...)
 ```
 
 [documenter]: https://github.com/JuliaDocs/Documenter.jl
-[documenter-docs]: https://juliadocs.github.io/Documenter.jl/stable/
+[documenter-docs]: https://Documenter.juliadocs.org/stable/
 
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
-[docs-stable-url]: https://juliadocs.github.io/DocumenterMarkdown.jl/stable
+[docs-stable-url]: https://DocumenterMarkdown.juliadocs.org/stable
 
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
-[docs-dev-url]: https://juliadocs.github.io/DocumenterMarkdown.jl/dev
+[docs-dev-url]: https://DocumenterMarkdown.juliadocs.org/dev
 
 [gha-img]: https://github.com/JuliaDocs/DocumenterMarkdown.jl/actions/workflows/CI.yml/badge.svg?branch=master
 [gha-url]: https://github.com/JuliaDocs/DocumenterMarkdown.jl/actions/workflows/CI.yml
