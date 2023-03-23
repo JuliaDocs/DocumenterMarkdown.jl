@@ -1,5 +1,5 @@
-site_name:        PACKAGE_NAME.jl
-repo_url:         https://github.com/USER_NAME/PACKAGE_NAME.jl
+site_name:        DocumenterMarkdown.jl
+repo_url:         https://github.com/JuliaDocs/DocumenterMarkdown.jl
 site_description: Description...
 site_author:      USER_NAME
 
