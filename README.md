@@ -6,11 +6,6 @@
 
 This package provides a Markdown / MkDocs backend to [`Documenter.jl`][documenter].
 
-**Package status:** Currently, the package does not work with the 0.28 branch of Documenter, and
-therefore the latest versions of Documenter do not have a Markdown backend available.
-Older, released versions of this package can still be used together with older versions of Documenter (0.27
-and earlier) to enable the Markdown backend built in to those versions of Documenter.
-
 Right now, this package is not actively maintained. However, contributions are welcome by anyone
 who might be interested in using and developing this backend.
 

@@ -1,6 +1,6 @@
 name = "DocumenterMarkdown"
 uuid = "997ab1e6-3595-5248-9280-8efb232c3433"
-version = "0.2.2"
+version = "0.3.0"
 
 [deps]
 ANSIColoredPrinters = "a4c015fc-c6ff-483c-b24f-f7ea428134e9"
@@ -10,11 +10,14 @@ Markdown = "d6f4376e-aef5-505a-96c1-9c027394607a"
 
 [compat]
 ANSIColoredPrinters = "0.0.1"
-Documenter = "0.27.18"
+Documenter = "1.0"
 julia = "1"
 
 [extras]
+DocInventories = "43dc2714-ed3b-44b5-b226-857eda1aa7de"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+URIs = "5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4"
 
 [targets]
-test = ["Test"]
+test = ["Test", "DocInventories", "HTTP", "URIs"]
