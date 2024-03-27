@@ -1,17 +1,20 @@
 module DocumenterMarkdown
-using Documenter: Documenter
-using Documenter.Utilities: Selectors
 
-const ASSETS = normpath(joinpath(@__DIR__, "..", "assets"))
+import Documenter: Documenter, Builder, Expanders, Selectors, MarkdownAST
+import Base64: base64decode, base64encode
+import Markdown
 
+import ANSIColoredPrinters
+
+include("types.jl")
+include("utils.jl")
 include("writer.jl")
-export Markdown
+include("mime_rendering.jl")
+
+include("flavors/github.jl")
+include("flavors/mkdocs.jl")
 
 # Selectors interface in Documenter.Writers, for dispatching on different writers
-abstract type MarkdownFormat <: Documenter.Writers.FormatSelector end
-Selectors.order(::Type{MarkdownFormat}) = 1.0
-Selectors.matcher(::Type{MarkdownFormat}, fmt, _) = isa(fmt, Markdown)
-Selectors.runner(::Type{MarkdownFormat}, fmt, doc) = render(doc, fmt)
 
 # This is from the old Deps module:
 
