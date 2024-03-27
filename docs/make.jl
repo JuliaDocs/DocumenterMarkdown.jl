@@ -3,7 +3,12 @@ using DocumenterMarkdown
 
 makedocs(
     sitename = "DocumenterMarkdown",
-    format = JuliaMarkdown(),
+    format = MkDocsMarkdown(),
+    pages = [
+        "Introduction" => "index.md",
+        "Markdown Flavors" => "flavors.md",
+        "API Reference" => "api.md",
+    ],
     warnonly = true,
 )
 
