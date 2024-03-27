@@ -6,7 +6,7 @@ This module defines the types used in the DocumenterMarkdown package.
 We begin with the settings holders.
 =#
 
-export JuliaMarkdown
+export JuliaMarkdown, GithubMarkdown, MkDocsMarkdown
 
 
 """
@@ -35,13 +35,13 @@ is the admonition syntax.
 struct GithubMarkdown <: AbstractMarkdown end
 
 """
-    MkdocsMarkdown()
+    MkDocsMarkdown()
 
 Settings struct for rendering MkDocs-flavored Markdown.
 
 There is no difference between this and Julia-flavored markdown.
 """
-struct MkdocsMarkdown <: AbstractMarkdown end
+struct MkDocsMarkdown <: AbstractMarkdown end
 
 #=
 Now, we define the format type for Markdown rendering.

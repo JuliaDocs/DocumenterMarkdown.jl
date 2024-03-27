@@ -2,7 +2,7 @@
 mdext(f) = string(splitext(f)[1], ".md")
 
 function render(settings::AbstractMarkdown, doc::Documenter.Document)
-    @info "DocumenterMarkdown: rendering Markdown pages."
+    @info "DocumenterMarkdown: rendering Markdown pages.  Flavor: `$(typeof(settings))`."
     mime = MIME"text/plain"()
     builddir = isabspath(doc.user.build) ? doc.user.build : joinpath(doc.user.root, doc.user.build)
     for (src, page) in doc.blueprint.pages
@@ -13,6 +13,7 @@ function render(settings::AbstractMarkdown, doc::Documenter.Document)
             end
         end
     end
+    Documenter.HTMLWriter.write_inventory(doc, ___MarkdownContext(doc))
 end
 
 

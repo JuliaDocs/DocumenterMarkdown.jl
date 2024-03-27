@@ -6,7 +6,7 @@
 
 
 function render(settings::MkDocsMarkdown, doc::Documenter.Document)
-    @info "DocumenterMarkdown: rendering Markdown pages."
+    @info "DocumenterMarkdown: rendering Markdown pages in MkDocs markdown."
     mime = MIME"text/plain"()
     builddir = isabspath(doc.user.build) ? doc.user.build : joinpath(doc.user.root, doc.user.build)
     mkpath(builddir)
@@ -25,6 +25,7 @@ function render(settings::MkDocsMarkdown, doc::Documenter.Document)
             end
         end
     end
+    Documenter.HTMLWriter.write_inventory(doc, ___MarkdownContext(doc))
 end
 
 # Aside from the asset copying, the rendering process is the same as the default Markdown renderer.

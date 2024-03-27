@@ -4,6 +4,9 @@
 This file provides overloads to the Documenter.jl inventory finding functions which allow us
 to write the Sphinx inventory file used by DocumenterInterLinks and Intersphinx.
 
+By providing a Markdown context, you can use the `Documenter.HTMLWriters.write_inventory(doc, ___MarkdownContext(doc))` function 
+and provide it a `___MarkdownContext` object to generate the inventory file.
+
 =#
 
 """
@@ -22,5 +25,5 @@ function ___MarkdownContext(doc; inventory_version = Documenter.DOCUMENTER_VERSI
     ___MarkdownContext(settings, doc)
 end
 
-function Documenter.getpage(ctx, navnode)
-end
+Documenter.HTMLWriter.getpage(ctx::___MarkdownContext, path) = ctx.doc.blueprint.pages[path]
+Documenter.HTMLWriter.getpage(ctx::___MarkdownContext, navnode::Documenter.NavNode) = Documenter.HTMLWriter.getpage(ctx, navnode.page)

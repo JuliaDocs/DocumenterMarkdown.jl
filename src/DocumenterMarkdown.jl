@@ -8,6 +8,7 @@ import ANSIColoredPrinters
 
 include("types.jl")
 include("utils.jl")
+include("inventory.jl")
 include("writer.jl")
 include("mime_rendering.jl")
 
