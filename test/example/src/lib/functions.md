@@ -195,3 +195,5 @@ A footnote reference [^footnote].
 
   * a normal docstring `@ref` link: [`AutoDocs.Pages.f`](@ref);
   * a named docstring `@ref` link: [`f`](@ref AutoDocs.Pages.f);
+
+[^footnote]: Hello there my old friend...

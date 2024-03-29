@@ -125,7 +125,7 @@ end
 
 @info "Building example docs."
 example_doc = makedocs(
-    format = Markdown(),
+    format = JuliaMarkdown(),
     modules = [Mod, AutoDocs],
     doctest = false,
     debug  = true,
