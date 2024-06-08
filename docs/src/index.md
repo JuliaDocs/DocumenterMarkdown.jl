@@ -123,7 +123,7 @@ This package should also be installed locally so that you can preview the genera
 documentation prior to pushing new commits to a repository.
 
 ```sh
-$ pip install python-markdown-math
+pip install python-markdown-math
 ```
 
 The `docs/mkdocs.yml` file must add the `python-markdown-math` extension, called `mdx_math`,
