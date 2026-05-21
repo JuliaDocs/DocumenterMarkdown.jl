@@ -6,6 +6,9 @@ on:
       - release-*
     tags: '*'
   pull_request:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
     name: Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }}
@@ -13,28 +16,22 @@ jobs:
     strategy:
       matrix:
         version:
-          - '1.0'
-          - '1.6'
+          - 'lts'
           - '1'
-          - 'nightly'
         os:
           - ubuntu-latest
           - windows-latest
           - macos-latest
         arch:
           - x64
-        include:
-          - os: ubuntu-latest
-            version: '1'
-            arch: x86
     steps:
-      - uses: actions/checkout@v2
-      - uses: julia-actions/setup-julia@v1
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v2
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
           show-versioninfo: true
-      - uses: actions/cache@v1
+      - uses: actions/cache@v4
         env:
           cache-name: cache-artifacts
         with:
@@ -46,7 +43,7 @@ jobs:
             ${{ runner.os }}-
       - uses: julia-actions/julia-runtest@latest
       - uses: julia-actions/julia-processcoverage@v1
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v4
         with:
           file: lcov.info
 
@@ -55,10 +52,10 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: julia-actions/setup-julia@v1
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v2
         with:
-          version: '1.6'
+          version: '1'
       - name: Install dependencies
         run: julia --color=yes --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
       - name: Build and deploy

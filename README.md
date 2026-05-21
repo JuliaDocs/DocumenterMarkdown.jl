@@ -5,18 +5,12 @@
 | [![][gha-img]][gha-url] [![][codecov-img]][codecov-url] |
 
 This package provides a Markdown / MkDocs backend to [`Documenter.jl`][documenter].
+It renders Documenter's docstrings, cross-references, `@autodocs`, `@index`, `@contents`,
+`@example` blocks, etc. to plain `.md` files that can be fed into a static-site
+generator such as [MkDocs](https://www.mkdocs.org/) (with [Material](https://squidfunk.github.io/mkdocs-material/) recommended).
 
-**Package status:** Currently, the package does not work with the 0.28 branch of Documenter, and
-therefore the latest versions of Documenter do not have a Markdown backend available.
-Older, released versions of this package can still be used together with older versions of Documenter (0.27
-and earlier) to enable the Markdown backend built in to those versions of Documenter.
-
-Right now, this package is not actively maintained. However, contributions are welcome by anyone
-who might be interested in using and developing this backend.
-
-## Documentation
-
-- [**DEVEL**][docs-dev-url] &mdash; *documentation of the in-development version.*
+**Package status:** Starting with version `0.3.0` the package targets Documenter `≥ 1.0`.
+Older releases (`0.2.x` and earlier) still support Documenter `0.27`. Contributions are welcome.
 
 ## Installation
 
@@ -29,14 +23,54 @@ pkg> add DocumenterMarkdown
 
 ## Usage
 
-To enable the backend import the package in `make.jl` and then just pass `format = Markdown()`
-to `makedocs`:
+Import the package in `make.jl` and pass `format = Markdown()` to `makedocs`:
 
 ```julia
 using Documenter
 using DocumenterMarkdown
-makedocs(format = Markdown(), ...)
+makedocs(sitename = "MyPackage", format = Markdown(), ...)
 ```
+
+This produces `.md` files under `build/`. Point an MkDocs configuration at that
+directory to render the final site:
+
+```yaml
+# mkdocs.yml
+site_name: MyPackage
+docs_dir: build
+theme:
+  name: material
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - tables
+  - def_list
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tilde
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+```
+
+Then build:
+
+```
+julia --project=docs docs/make.jl
+mkdocs build
+```
+
+### Notes on the generated markdown
+
+- Headings are emitted with Pandoc-style `{#anchor-id}` attributes; the
+  `attr_list` extension (default in `mkdocs-material`) wires them up as anchors.
+- Docstring entries use raw `<a id="..."></a>` HTML anchors so they don't
+  pollute the page TOC.
+- Cross-references and `@ref` links are rewritten to `*.md#anchor` so they
+  resolve under both `use_directory_urls: true` and `false`.
+- Math uses `$...$` / `$$...$$` (rendered via `pymdownx.arithmatex`).
+- Admonitions use the standard MkDocs `!!! category "title"` syntax.
 
 [documenter]: https://github.com/JuliaDocs/Documenter.jl
 [documenter-docs]: https://Documenter.juliadocs.org/stable/

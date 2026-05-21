@@ -1,24 +1,25 @@
-site_name:        DocumenterMarkdown.jl
-repo_url:         https://github.com/JuliaDocs/DocumenterMarkdown.jl
-site_description: Description...
-site_author:      USER_NAME
+site_name: DocumenterMarkdown.jl
+site_description: Markdown / MkDocs backend for Documenter.jl
+repo_url: https://github.com/JuliaDocs/DocumenterMarkdown.jl
 
-theme: readthedocs
+theme:
+  name: material
 
-extra_css:
-  - assets/Documenter.css
-
-extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML
-  - assets/mathjaxhelper.js
-
-markdown_extensions:
-  - extra
-  - tables
-  - fenced_code
-  - mdx_math
-
-docs_dir: 'build'
+docs_dir: build
 
 nav:
   - Home: index.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - tables
+  - def_list
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

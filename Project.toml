@@ -1,17 +1,18 @@
 name = "DocumenterMarkdown"
 uuid = "997ab1e6-3595-5248-9280-8efb232c3433"
-version = "0.2.2"
+version = "0.3.0"
 
 [deps]
 ANSIColoredPrinters = "a4c015fc-c6ff-483c-b24f-f7ea428134e9"
 Base64 = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-Markdown = "d6f4376e-aef5-505a-96c1-9c027394607a"
+MarkdownAST = "d0879d2d-cac2-40c8-9cee-1863dc0c7391"
 
 [compat]
-ANSIColoredPrinters = "0.0.1"
-Documenter = "0.27.18"
-julia = "1"
+ANSIColoredPrinters = "0.0.1, 0.1"
+Documenter = "1"
+MarkdownAST = "0.1"
+julia = "1.10"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

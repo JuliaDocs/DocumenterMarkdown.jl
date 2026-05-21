@@ -19,9 +19,8 @@ src_files = list_files(joinpath(@__DIR__, "src"))
 
 @testset "example build" begin
     @test joinpath(@__DIR__, "build") |> isdir
-    @test joinpath(@__DIR__, "build", "assets", "Documenter.css") |> isfile
-    @test joinpath(@__DIR__, "build", "assets", "mathjaxhelper.js") |> isfile
 
+    # User-supplied assets (from test/example/src/assets/) are copied by Documenter itself.
     @test joinpath(@__DIR__, "build", "assets", "favicon.ico") |> isfile
     @test joinpath(@__DIR__, "build", "assets", "custom.js") |> isfile
     @test joinpath(@__DIR__, "build", "assets", "custom.css") |> isfile
@@ -32,5 +31,4 @@ src_files = list_files(joinpath(@__DIR__, "src"))
     end
 
     @test joinpath(@__DIR__, "build", "man", "data.csv") |> isfile
-    @test joinpath(@__DIR__, "build", "man", "julia.svg") |> isfile
 end

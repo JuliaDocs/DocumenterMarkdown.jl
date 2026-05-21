@@ -1,15 +1,20 @@
-using Documenter: makedocs, deploydocs, Deps
+using Documenter
 using DocumenterMarkdown
 
 makedocs(
     sitename = "DocumenterMarkdown",
     format = Markdown(),
+    modules = [DocumenterMarkdown],
+    pages = [
+        "Home" => "index.md",
+    ],
+    checkdocs = :exports,
 )
 
 deploydocs(
     repo = "github.com/JuliaDocs/DocumenterMarkdown.jl.git",
-    deps   = Deps.pip("mkdocs", "pygments", "python-markdown-math"),
-    make   = () -> run(`mkdocs build`),
     target = "site",
+    deps = DocumenterMarkdown.pip("mkdocs", "mkdocs-material", "pymdown-extensions"),
+    make = () -> run(`mkdocs build`),
     push_preview = true,
 )

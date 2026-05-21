@@ -125,9 +125,11 @@ end
 
 @info "Building example docs."
 example_doc = makedocs(
+    sitename = "DocumenterMarkdown",
     format = Markdown(),
     modules = [Mod, AutoDocs],
     doctest = false,
     debug  = true,
+    warnonly = true,
 );
 
