@@ -123,11 +123,43 @@ module AutoDocs
     end
 end
 
+# An extension of Documenter like DocumenterMermaid: it replaces the code blocks of the
+# language `diagram` by an element of its own, which keeps the code block in the field
+# `codeblock`, and adds an element without content to every page.
+module Extension
+    using Documenter: Documenter, Selectors
+    using MarkdownAST: MarkdownAST, Node
+
+    abstract type DiagramExpander <: Documenter.Expanders.ExpanderPipeline end
+    Selectors.matcher(::Type{DiagramExpander}, node, page, doc) =
+        Documenter.iscode(node, "diagram")
+    Selectors.order(::Type{DiagramExpander}) = 7.9
+    function Selectors.runner(::Type{DiagramExpander}, node, page, doc)
+        node.element = DiagramBlock(node.element)
+        return
+    end
+    struct DiagramBlock <: Documenter.AbstractDocumenterBlock
+        codeblock::MarkdownAST.CodeBlock
+    end
+
+    struct ScriptBlock <: Documenter.AbstractDocumenterBlock end
+    abstract type ScriptBuilder <: Documenter.Builder.DocumentPipeline end
+    Selectors.order(::Type{ScriptBuilder}) = 5.5
+    function Selectors.runner(::Type{ScriptBuilder}, doc::Documenter.Document)
+        for page in values(doc.blueprint.pages)
+            push!(page.mdast.children, Node(ScriptBlock()))
+        end
+    end
+end
+
 @info "Building example docs."
 example_doc = makedocs(
     format = Markdown(),
     modules = [Mod, AutoDocs],
     doctest = false,
     debug  = true,
+    # the pages contain links and footnotes that Documenter 1 reports as errors
+    # (e.g. "some:path" as a Windows path, a footnote without a definition)
+    warnonly = [:cross_references, :footnote],
 );
 

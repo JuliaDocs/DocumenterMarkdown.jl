@@ -6,13 +6,12 @@
 
 This package provides a Markdown / MkDocs backend to [`Documenter.jl`][documenter].
 
-**Package status:** Currently, the package does not work with the 0.28 branch of Documenter, and
-therefore the latest versions of Documenter do not have a Markdown backend available.
-Older, released versions of this package can still be used together with older versions of Documenter (0.27
-and earlier) to enable the Markdown backend built in to those versions of Documenter.
+**Package status:** Version 0.3 works with Documenter 1 (tested with 1.20) and Julia 1.10 or later.
+Versions 0.2 work with Documenter 0.27 only; use them if you cannot update Documenter.
+The Markdown that version 0.3 writes differs slightly from that of version 0.2, see the
+[changelog](CHANGELOG.md).
 
-Right now, this package is not actively maintained. However, contributions are welcome by anyone
-who might be interested in using and developing this backend.
+Contributions are welcome by anyone who might be interested in using and developing this backend.
 
 ## Documentation
 
@@ -37,6 +36,12 @@ using Documenter
 using DocumenterMarkdown
 makedocs(format = Markdown(), ...)
 ```
+
+By default each docstring is written as an anchor, a bold name and the text. With
+`Markdown(docstrings = :details)` (or `:admonition`) it is written as a box with the name and
+the category as its title, which MkDocs or [Zensical](https://zensical.org) show with a header
+bar, and can fold (needs the extension `pymdownx.details`, or `admonition`); style the CSS
+class `docstring` as you like.
 
 [documenter]: https://github.com/JuliaDocs/Documenter.jl
 [documenter-docs]: https://Documenter.juliadocs.org/stable/

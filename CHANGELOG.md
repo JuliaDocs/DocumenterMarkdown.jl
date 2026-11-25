@@ -1,5 +1,28 @@
 # DocumenterMarkdown.jl changelog
 
+## Version `v0.3.0`
+
+* ![Breaking][badge-breaking] Requires Documenter 1 (it was 0.27) and Julia 1.10. The
+  writer is rewritten for the MarkdownAST representation of the pages.
+* The new keyword `Markdown(docstrings = :admonition)` or `:details` writes each docstring
+  as a box (an admonition or a details block of the class `docstring`, with the name and the
+  category as the title) that can be styled with CSS; the default `:plain` is as before.
+* ![Breaking][badge-breaking] `pip` is removed (`Deps.pip` is gone in Documenter 1).
+* The output differs from that of version 0.2:
+  * links between pages and to local files are relative to the directory of the page
+    that contains them (also in `@contents`); a link to the page itself without a
+    fragment stays `#`;
+  * the elements of extensions of Documenter that replace a code block and keep it in a
+    field `codeblock` (e.g. the `mermaid` blocks of DocumenterMermaid) are written as that
+    code block; elements without content are left out without a warning;
+  * `[text](@id name)` anchors around inline content are not written: the content is
+    written without the anchor;
+  * the entries of an `@index` with the same name are in the order of Documenter 1;
+  * every docstring starts with a blank line, so that its anchor starts a paragraph of its
+    own also if the previous docstring has no source link (without a remote repository);
+  * fewer blank lines around docstrings and at the end of code blocks, and line
+    endings of the sources are normalized to LF (done by Documenter).
+
 ## Version `v0.2.1`
 
 * Declare compatibility with Documenter 0.26. ([#5][github-5])
