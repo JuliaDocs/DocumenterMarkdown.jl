@@ -66,8 +66,10 @@ julia> a / b
 
 ```@eval
 import Markdown
-code = string(sprint(Base.banner), "julia>")
-Markdown.Code(code)
+# Base.banner moved to the REPL package in newer versions of Julia
+banner = isdefined(Base, :banner) ? sprint(Base.banner) : "julia version $(VERSION)\n"
+code = string(banner, "julia>")
+Markdown.MD(Markdown.Code(code))
 ```
 
 ```jldoctest

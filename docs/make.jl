@@ -1,4 +1,4 @@
-using Documenter: makedocs, deploydocs, Deps
+using Documenter: makedocs, deploydocs
 using DocumenterMarkdown
 
 makedocs(
@@ -8,7 +8,7 @@ makedocs(
 
 deploydocs(
     repo = "github.com/JuliaDocs/DocumenterMarkdown.jl.git",
-    deps   = Deps.pip("mkdocs", "pygments", "python-markdown-math"),
+    # the Python packages mkdocs, pygments and python-markdown-math must be installed
     make   = () -> run(`mkdocs build`),
     target = "site",
     push_preview = true,
